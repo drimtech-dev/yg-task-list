@@ -3,13 +3,17 @@ document.addEventListener('DOMContentLoaded', function () {
     const messageInput = document.getElementById('messageInput');
     const messagesDiv = document.getElementById('messages');
 
-    // 从 localStorage 加载留言
+    // 从后端 API 加载留言
     function loadMessages() {
-        const messages = JSON.parse(localStorage.getItem('messages')) || [];
-        messages.reverse(); // 反转留言数组，使最新的留言在最前面
-        messages.forEach((message, index) => {
-            displayMessage(message.text, message.date, index); // 显示留言和日期
-        });
+        fetch('http://localhost:3000/api/messages')
+            .then(response => response.json())
+            .then(messages => {
+                messages.reverse(); // 反转留言数组，使最新的留言在最前面
+                messages.forEach((message, index) => {
+                    displayMessage(message.text, message.date, index); // 显示留言和日期
+                });
+            })
+            .catch(error => console.error('Error loading messages:', error));
     }
 
     // 显示留言
@@ -44,11 +48,13 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function deleteMessage(index, messageElem) {
-        const messages = JSON.parse(localStorage.getItem('messages')) || [];
-        messages.splice(index, 1); // 删除指定索引的留言
-        localStorage.setItem('messages', JSON.stringify(messages)); // 更新 localStorage
-        
-        messagesDiv.removeChild(messageElem); // 仅移除对应的留言元素
+        fetch(`http://localhost:3000/api/messages/${index}`, {
+            method: 'DELETE'
+        })
+            .then(() => {
+                messagesDiv.removeChild(messageElem); // 仅移除对应的留言元素
+            })
+            .catch(error => console.error('Error deleting message:', error));
     }
 
     messageForm.addEventListener('submit', function (event) {
@@ -61,14 +67,21 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         const messageDate = new Date().toLocaleDateString('zh-CN'); // 获取日期
-        displayMessage(messageText, messageDate, messagesDiv.children.length); // 显示留言和日期
 
-        // 保存留言到 localStorage
-        const messages = JSON.parse(localStorage.getItem('messages')) || [];
-        messages.push({ text: messageText, date: messageDate }); // 存储留言和日期
-        localStorage.setItem('messages', JSON.stringify(messages));
-        
-        messageInput.value = ''; // 清空输入框
+        // 保存留言到后端 API
+        fetch('http://localhost:3000/api/messages', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ text: messageText, date: messageDate })
+        })
+            .then(response => response.json())
+            .then(newMessage => {
+                displayMessage(newMessage.text, newMessage.date, messagesDiv.children.length); // 显示留言和日期
+                messageInput.value = ''; // 清空输入框
+            })
+            .catch(error => console.error('Error adding message:', error));
     });
 
     // 页面加载时加载留言
