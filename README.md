@@ -1,6 +1,6 @@
-# Message Board Backend
+# yg-task-list
 
-This is the backend for a simple message board application built with Node.js and Express.
+This is a simple message board application built with Node.js and Express.
 
 ## Installation
 
