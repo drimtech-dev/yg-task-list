@@ -1,0 +1,182 @@
+body {
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9; 
+    color: #333;
+    overflow-x: hidden;
+    background-image: repeating-linear-gradient(135deg, #b8e9ff0f, #b8e9ff0f 4rem, transparent 0, transparent 8rem);
+    min-height: calc(100vh);  /*修复条纹裂开*/
+    transition: background-color 0.3s; /* 添加背景色过渡 */
+}
+
+h1 {
+    text-align: center;
+    font-size: 2.5em;
+    color: #06B0FF; /* 新的主题色作为标题颜色 */
+    margin-bottom: 20px;
+    transition: transform 0.3s; /* 添加变换过渡 */
+}
+
+h1:hover {
+    transform: scale(1.05); /* 悬停时稍微放大 */
+}
+
+a {
+    color: #06B0FF; /* 新的主题色作为链接颜色 */
+    text-decoration: none;
+    transition: color 0.3s; /* 添加颜色过渡 */
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #005BB5; /* 悬停时颜色变化 */
+}
+
+.container {
+    max-width: 900px;
+    margin: 50px auto;
+    background: white; /* 白色背景 */
+    padding: 30px;
+    border-radius: 0; /* 去掉圆角 */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* 柔和阴影 */
+    transition: box-shadow 0.3s; /* 添加阴影过渡 */
+}
+
+.container:hover {
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2); /* 悬停时加深阴影 */
+}
+
+.textarea-container {
+    position: relative; /* 设置相对定位以便让按钮绝对定位 */
+    margin-bottom: 0; /* 设置与其他元素的间距 */
+}
+
+textarea {
+    width: 100%;
+    max-width: 900px; /* 设置最大宽度为100%确保在容器内 */
+    height: 300px; /* 设置固定高度 */
+    min-height: 100px; /* 设置最小高度 */
+    resize: vertical; /* 允许在垂直方向改变大小 */
+    border: none; /* 去掉默认边框 */
+    padding: 20px;
+    font-size: 1em;
+    box-sizing: border-box; /* 包含内边距和边框在内 */
+    background-color: #f7f7f7; /* 设置与.message相同的底色 */
+    box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.1); /* 添加与.message相同的内阴影 */
+    color: #555; /* 设置深灰色文字 */
+    border-radius: 0; /* 去掉圆角 */
+    transition: box-shadow 0.3s; /* 添加阴影过渡 */
+}
+
+textarea:hover {
+    box-shadow: inset 4px 4px 10px rgba(0, 0, 0, 0.2); /* 悬停时加深阴影 */
+}
+
+.submit-button {
+    position: absolute; /* 绝对定位 */
+    bottom: 10px; /* 距离底部10px */
+    right: 10px; /* 距离右侧10px */
+    background-color: #06B0FF; /* 按钮背景色 */
+    color: white; /* 按钮文字颜色 */
+    border: none; /* 去掉边框 */
+    padding: 5px 10px; /* 内边距 */
+    cursor: pointer; /* 鼠标悬停为手指样式 */
+    border-radius: 0; /* 去掉圆角 */
+    transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s; /* 添加阴影和变换过渡效果 */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* 添加基础阴影 */
+    font-size: 1em;
+}
+
+.submit-button:hover {
+    background-color: #FF8C00; /* 悬停时颜色稍微暗一点 */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* 悬停时加深阴影 */
+    transform: scale(1.05); /* 悬停时微微放大 */
+}   
+
+.messages {
+    margin-top: 20px;
+}
+
+.message {
+    max-width: 920px;
+    margin: 50px auto;
+    position: relative; /* 需要相对定位以便让按钮绝对定位 */
+    border-bottom: 2px solid #eee; /* 增宽分隔线为2px */
+    padding: 24px 20px; 
+    font-size: 1.1em;
+    color: #555; /* 深灰色内容 */
+    background-color: #f7f7e7;
+    margin-bottom: 20px; /* 与其他元素之间的间距 */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* 添加阴影 */
+    transition: transform 0.3s; /* 添加变换过渡 */
+}
+
+.message:hover {
+    transform: translateY(-2px); /* 悬停时轻微向上移动 */
+}
+
+.message .delete-button {
+    position: absolute; /* 绝对定位 */
+    top: 10px; /* 距离上边距 */
+    right: 10px; /* 距离右边距 */
+    background-color: #FF8C00; /* 删除按钮的背景色 */
+    color: white; /* 按钮文字颜色 */
+    border: none; /* 去掉默认边框 */
+    padding: 5px 10px; /* 内边距 */
+    transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s; /* 添加阴影和变换过渡效果 */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* 添加基础阴影 */
+    font-size: 0.9em;
+}
+
+.message .delete-button:hover {
+    background-color: #ff0000; /* 悬停时颜色稍微暗一点 */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* 悬停时加深阴影 */
+    transform: scale(1.05); /* 悬停时微微放大 */
+}
+
+.message-date {
+    font-size: 0.9em; /* 固定日期字体大小 */
+    color: #777; /* 日期文本颜色 */
+    margin-left: 10px; /* 日期与文本间距 */
+}
+
+.message:last-child {
+    border-bottom: none; /* 最后一条留言去掉分隔线 */
+}
+
+.footer {
+    text-align: center; /* 居中对齐 */
+    background-color: #f1f1f1; /* 背景色 */
+    border-top: 1px solid #ddd; /* 上边框 */
+    position: relative; /* 使其可以在页面底部 */
+    bottom: 0;
+    width: 100%; /* 使其宽度充满页面 */
+    font-size: 0.7em; /* 设置字体大小 */
+    color: #777; /* 字体颜色 */
+    display: flex; /* 使用 flexbox 布局 */
+    justify-content: space-between; /* 左右对齐 */
+    align-items: flex-end; /* 垂直向下对齐 */
+    padding: 10px; /* 内边距 */
+    transition: transform 0.3s; /* 添加变换过渡 */
+}
+
+.footer:hover {
+    transform: translateY(-2px); /* 悬停时轻微向上移动 */
+}
+
+.footer-left,
+.footer-center,
+.footer-right {
+    flex: 1; /* 让每个部分都占据相同的空间 */
+    text-align: center; /* 默认为居中 */
+    padding: 0 40px; /* 为左右两侧添加 20px 的内边距 */
+}
+
+.footer-left {
+    text-align: left; /* 左对齐 */
+}
+
+.footer-right {
+    text-align: right; /* 右对齐 */
+}
