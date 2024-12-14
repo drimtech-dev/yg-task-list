@@ -46,6 +46,7 @@ a:hover {
 }
 
 .container {
+    border-top: #06B0FF 2px solid; /* 顶部边框 */
     max-width: 900px;
     margin: 50px auto;
     background: white; /* 白色背景 */
