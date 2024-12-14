@@ -35,7 +35,7 @@ a:hover {
 
 .container {
     max-width: 900px;
-    margin: 50px;
+    margin: 50px auto;
     background: white; /* 白色背景 */
     padding: 30px;
     border-radius: 0; /* 去掉圆角 */
