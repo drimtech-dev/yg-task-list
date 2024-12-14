@@ -9,7 +9,6 @@ document.addEventListener('DOMContentLoaded', function () {
         fetch('http://localhost:3000/api/messages')
             .then(response => response.json())
             .then(messages => {
-                messages.reverse(); // 反转留言数组，使最新的留言在最前面
                 messages.forEach((message, index) => {
                     displayMessage(message.text, message.date, index); // 显示留言和日期
                 });
@@ -79,6 +78,7 @@ document.addEventListener('DOMContentLoaded', function () {
         })
             .then(response => response.json())
             .then(newMessage => {
+                messageInput.value = ''; // 清空输入框内容
                 location.reload(); // 添加留言后刷新页面
             })
             .catch(error => console.error('Error adding message:', error));
