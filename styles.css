@@ -1,3 +1,14 @@
+@keyframes fadeIn {
+    0% {
+        opacity: 0; /* 初始透明度为0 */
+        transform: translateY(20px); /* 向下移动20px */
+    }
+    100% {
+        opacity: 1; /* 最终透明度为1 */
+        transform: translateY(0); /* 回到原位 */
+    }
+}
+
 body {
     font-family: 'Courier New', Courier, monospace;
     margin: 0;
@@ -16,6 +27,7 @@ h1 {
     color: #06B0FF; /* 新的主题色作为标题颜色 */
     margin-bottom: 20px;
     transition: transform 0.3s; /* 添加变换过渡 */
+    animation: fadeIn 0.5s;
 }
 
 h1:hover {
@@ -41,6 +53,7 @@ a:hover {
     border-radius: 0; /* 去掉圆角 */
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* 柔和阴影 */
     transition: box-shadow 0.3s; /* 添加阴影过渡 */
+    animation: fadeIn 0.5s; /* 给容器添加淡入动画 */
 }
 
 .container:hover {
@@ -86,6 +99,7 @@ textarea:hover {
     transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s; /* 添加阴影和变换过渡效果 */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* 添加基础阴影 */
     font-size: 1em;
+    animation: fadeIn 0.5s; /* 给容器添加淡入动画 */
 }
 
 .submit-button:hover {
@@ -110,6 +124,7 @@ textarea:hover {
     margin-bottom: 20px; /* 与其他元素之间的间距 */
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* 添加阴影 */
     transition: transform 0.3s; /* 添加变换过渡 */
+    animation: fadeIn 0.5s; /* 给留言添加淡入动画 */
 }
 
 .message:hover {
