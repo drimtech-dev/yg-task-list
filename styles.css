@@ -35,7 +35,7 @@ a:hover {
 
 .container {
     max-width: 900px;
-    margin: 50px auto;
+    margin: 50px;
     background: white; /* 白色背景 */
     padding: 30px;
     border-radius: 0; /* 去掉圆角 */
@@ -55,7 +55,7 @@ a:hover {
 textarea {
     width: 100%;
     max-width: 900px; /* 设置最大宽度为100%确保在容器内 */
-    height: 300px; /* 设置固定高度 */
+    height: 250px; /* 设置固定高度 */
     min-height: 100px; /* 设置最小高度 */
     resize: vertical; /* 允许在垂直方向改变大小 */
     border: none; /* 去掉默认边框 */
@@ -75,7 +75,7 @@ textarea:hover {
 
 .submit-button {
     position: absolute; /* 绝对定位 */
-    bottom: 10px; /* 距离底部10px */
+    bottom: 15px; /* 距离底部10px */
     right: 10px; /* 距离右侧10px */
     background-color: #06B0FF; /* 按钮背景色 */
     color: white; /* 按钮文字颜色 */
