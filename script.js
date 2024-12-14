@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // 从后端 API 加载留言
     function loadMessages() {
+        messagesDiv.innerHTML = ''; // 清空消息容器
         fetch('http://localhost:3000/api/messages')
             .then(response => response.json())
             .then(messages => {
@@ -44,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function () {
         };
         messageElem.appendChild(deleteButton); // 将按钮添加到留言中
 
-        messagesDiv.appendChild(messageElem);
+        messagesDiv.insertBefore(messageElem, messagesDiv.firstChild);
     }
 
     function deleteMessage(index, messageElem) {
