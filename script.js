@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function () {
             method: 'DELETE'
         })
             .then(() => {
-                messagesDiv.removeChild(messageElem); // 仅移除对应的留言元素
+                location.reload(); // 删除后刷新页面
             })
             .catch(error => console.error('Error deleting message:', error));
     }
@@ -78,8 +78,7 @@ document.addEventListener('DOMContentLoaded', function () {
         })
             .then(response => response.json())
             .then(newMessage => {
-                displayMessage(newMessage.text, newMessage.date, messagesDiv.children.length); // 显示留言和日期
-                messageInput.value = ''; // 清空输入框
+                location.reload(); // 添加留言后刷新页面
             })
             .catch(error => console.error('Error adding message:', error));
     });
