@@ -1,3 +1,9 @@
+/* 引入 HarmonyOS Sans SC 字体 */
+@import url('https://at.alicdn.com/t/c/font_3642326_zuyt9bihjwr.css');
+
+/* 引入 JetBrains Mono 字体 */
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap');
+
 @keyframes fadeIn {
     0% {
         opacity: 0; /* 初始透明度为0 */
@@ -10,7 +16,7 @@
 }
 
 body {
-    font-family: 'HarmonyOS_Sans_SC','JetBrains Mono', monospace;
+    font-family: 'JetBrains Mono', 'HarmonyOS Sans SC', monospace;
     margin: 0;
     padding: 0;
     background-color: #f9f9f9; 
@@ -21,9 +27,8 @@ body {
     transition: background-color 0.3s; /* 添加背景色过渡 */
 }
 
-
-h1{
-    font-family: 'HarmonyOS_Sans_SC','JetBrains Mono', monospace;
+h1 {
+    font-family: 'JetBrains Mono', 'HarmonyOS Sans SC', monospace;
     font-weight: 700;
     text-align: center;
     font-size: 2.5em;
@@ -33,7 +38,7 @@ h1{
     animation: fadeIn 0.5s;
 }
 
-h1:hover{
+h1:hover {
     transform: scale(1.05); /* 悬停时稍微放大 */
 }
 
