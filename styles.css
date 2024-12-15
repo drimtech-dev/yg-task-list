@@ -49,12 +49,12 @@ a:hover {
 }
 
 .show-password-button {
+    position: fixed; /* 固定位置 */
     font-family: "JetBrains Mono", monospace;
     font-size: 0.3em;
     font-weight: 700;
     letter-spacing: 2px; /* 字母间距 */
     size: 10px; /* 设置尺寸 */
-    position: absolute;
     top: 20px;
     left: 20px;
     background-color: grey; /* 背景颜色 */
