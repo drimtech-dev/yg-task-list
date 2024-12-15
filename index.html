@@ -10,21 +10,25 @@
     <script src="script.js"></script> <!-- 引入外部 JavaScript 文件 -->
 </head>
 <body>
-    <h1>每日作业</h1>
-    <div class="container">
+    <button class="show-password-button" id="showPasswordButton">&lt;/&gt;</button> <!-- 新增按钮 -->
+    <h1>作业公告栏</h1>
+    <input type="password" class="password-input" id="passwordInput" placeholder=">_" style="display: none;" /> <!-- 密码输入框初始隐藏 -->
+    <div class="container" style="display: none;"> <!-- 初始隐藏 -->
         <form id="messageForm">
-        <div class="textarea-container">
-            <textarea id="messageInput" rows="4" placeholder="输入作业内容...[支持 MarkDown !]" required></textarea><br>
-            <button class="submit-button">提交</button>
-        </div>
+            <div class="textarea-container">
+                <textarea id="messageInput" rows="4" placeholder="输入作业内容...[支持 MarkDown !]" required></textarea><br>
+                <button class="submit-button">提交</button>
+            </div>
         </form>
     </div>
+  
     <div class="messages" id="messages"></div>
+    
     <footer class="footer">
-    <div class="footer-center">
-        <p><a href="https://dt.lpslps.com">DrimTech</a> | 一群热爱信息技术，善于创造的羊羔</p>
-        </br>
-    </div>
+        <div class="footer-center">
+            <p><a href="https://dt.lpslps.com">DrimTech</a> | 一群热爱信息技术，善于创造的羊羔</p>
+            <br>
+        </div>
     </footer>
 </body>
 </html>

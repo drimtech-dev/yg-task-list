@@ -21,7 +21,10 @@ body {
     transition: background-color 0.3s; /* 添加背景色过渡 */
 }
 
-h1 {
+
+h1{
+    font-family: 'HarmonyOS_Sans_SC','JetBrains Mono', monospace;
+    font-weight: 700;
     text-align: center;
     font-size: 2.5em;
     color: #06B0FF; /* 新的主题色作为标题颜色 */
@@ -30,7 +33,7 @@ h1 {
     animation: fadeIn 0.5s;
 }
 
-h1:hover {
+h1:hover{
     transform: scale(1.05); /* 悬停时稍微放大 */
 }
 
@@ -45,8 +48,35 @@ a:hover {
     color: #005BB5; /* 悬停时颜色变化 */
 }
 
+.show-password-button {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.3em;
+    font-weight: 700;
+    letter-spacing: 2px; /* 字母间距 */
+    size: 10px; /* 设置尺寸 */
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: grey; /* 背景颜色 */
+    color: white; /* 字体颜色 */
+    border: none; /* 去掉边框 */
+    padding: 5px 5px; /* 内边距 */
+    z-index: 1000; /* 确保在最上层显示 */
+    transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s; /* 添加阴影和变换过渡效果 */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* 添加基础阴影 */
+    animation: fadeIn 0.5s; /* 给容器添加淡入动画 */
+}
+
+.show-password-button:hover {
+    background-color: #06B0FF; /* 悬停时颜色稍微暗一点 */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* 悬停时加深阴影 */
+    transform: scale(1.05); /* 悬停时微微放大 */
+}   
+
+
 .container {
     border-top: #06B0FF 2px solid; /* 顶部边框 */
+    width: 80%;
     max-width: 900px;
     margin: 50px auto;
     background: white; /* 白色背景 */
@@ -76,6 +106,7 @@ textarea {
     padding: 20px;
     font-size: 1em;
     box-sizing: border-box; /* 包含内边距和边框在内 */
+    font-family: inherit;
     background-color: #f7f7f7; /* 设置与.message相同的底色 */
     box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.1); /* 添加与.message相同的内阴影 */
     color: #555; /* 设置深灰色文字 */
@@ -87,7 +118,32 @@ textarea:hover {
     box-shadow: inset 4px 4px 10px rgba(0, 0, 0, 0.2); /* 悬停时加深阴影 */
 }
 
-.submit-button {
+@keyframes fade {
+    0% {
+        opacity: 0; /* 初始透明度为0 */
+    }
+    100% {
+        opacity: 1; /* 最终透明度为1 */
+    }
+}
+
+.password-input {
+    position: fixed; /* 固定位置 */
+    top: 20px;
+    border: none; /* 去掉默认边框 */
+    border-top: #99CCCC 3px solid; /* 顶部边框 */
+    width: 84%;
+    left: 50%; /* 从左边50%开始 */
+    transform: translateX(-50%); /* 再向左移动自身宽度的一半，实现居中 */
+    background: #f5f5f5; /* 背景颜色 */
+    padding: 5px;
+    border-radius: 4px; /* 去掉圆角 */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* 柔和阴影 */
+    transition: box-shadow 0.3s; /* 添加阴影过渡 */
+    animation: fade 0.5s; /* 给容器添加淡入动画 */
+}
+
+.submit-button{
     position: absolute; /* 绝对定位 */
     bottom: 15px; /* 距离底部10px */
     right: 10px; /* 距离右侧10px */
@@ -114,6 +170,7 @@ textarea:hover {
 }
 
 .message {
+    width: 80%;
     max-width: 920px;
     margin: 50px auto;
     position: relative; /* 需要相对定位以便让按钮绝对定位 */

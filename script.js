@@ -1,7 +1,36 @@
 document.addEventListener('DOMContentLoaded', function () {
     const messageForm = document.getElementById('messageForm');
     const messageInput = document.getElementById('messageInput');
+    const showPasswordButton = document.getElementById('showPasswordButton'); // 左上角按钮
     const messagesDiv = document.getElementById('messages');
+    const passwordInput = document.getElementById('passwordInput'); // 密码输入框
+    const container = document.querySelector('.container'); // 容器
+
+    const correctPassword = '70727'; // 设置正确的密码
+
+    // 点击按钮时显示密码输入框
+    showPasswordButton.addEventListener('click', function () {
+        passwordInput.style.display = 'block'; // 显示密码输入框
+    });
+
+    // 监听密码输入
+    passwordInput.addEventListener('input', function () {
+        if (passwordInput.value === correctPassword) {
+            container.style.display = 'block'; // 显示容器
+            // 显示所有的删除按钮
+            const deleteButtons = document.querySelectorAll('.delete-button');
+            deleteButtons.forEach(button => {
+                button.style.display = 'inline'; // 显示删除按钮
+            });
+        } else {
+            container.style.display = 'none'; // 隐藏容器
+            // 隐藏所有的删除按钮
+            const deleteButtons = document.querySelectorAll('.delete-button');
+            deleteButtons.forEach(button => {
+                button.style.display = 'none'; // 隐藏删除按钮
+            });
+        }
+    });
 
     // 从后端 API 加载留言
     function loadMessages() {
@@ -39,6 +68,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const deleteButton = document.createElement('button');
         deleteButton.textContent = '删除';
         deleteButton.classList.add('delete-button');
+        deleteButton.style.display = 'none'; // 初始隐藏按钮
         deleteButton.onclick = function () {
             deleteMessage(index, messageElem); // 点击删除按钮时调用删除函数，并传入元素
         };
