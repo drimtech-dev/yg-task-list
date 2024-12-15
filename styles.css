@@ -165,17 +165,19 @@ textarea:hover {
     text-align: center; /* 居中对齐 */
     background-color: #f1f1f1; /* 背景色 */
     border-top: 1px solid #ddd; /* 上边框 */
-    position: relative; /* 使其可以在页面底部 */
-    bottom: 0;
-    width: 100%; /* 使其宽度充满页面 */
+    position: fixed; /* 使其固定在页面底部 */
+    bottom: 0; /* 距离底部0 */
+    left: 0; /* 距离左边距0 */
+    right: 0; /* 距离右边距0 */
     font-size: 0.7em; /* 设置字体大小 */
     color: #777; /* 字体颜色 */
     display: flex; /* 使用 flexbox 布局 */
     justify-content: space-between; /* 左右对齐 */
-    align-items: flex-end; /* 垂直向下对齐 */
+    align-items: center; /* 垂直居中对齐 */
     padding: 10px; /* 内边距 */
     transition: transform 0.3s; /* 添加变换过渡 */
 }
+
 
 .footer:hover {
     transform: translateY(-2px); /* 悬停时轻微向上移动 */
