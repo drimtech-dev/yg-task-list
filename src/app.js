@@ -2,6 +2,8 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const messageRoutes = require('./routes/messageRoutes');
+const XMLHttpRequest = require('xmlhttprequest').XMLHttpRequest;
+const xhr = new XMLHttpRequest();
 
 const app = express();
 const PORT = process.env.PORT || 3000;
