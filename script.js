@@ -8,7 +8,6 @@ document.addEventListener('DOMContentLoaded', function () {
     const XMLHttpRequest = require('xmlhttprequest').XMLHttpRequest;
     const xhr = new XMLHttpRequest();
 
-
     const correctPassword = '70727'; // 设置正确的密码
 
     // 点击按钮时显示密码输入框
