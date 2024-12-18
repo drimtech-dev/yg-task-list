@@ -5,6 +5,9 @@ document.addEventListener('DOMContentLoaded', function () {
     const messagesDiv = document.getElementById('messages');
     const passwordInput = document.getElementById('passwordInput'); // 密码输入框
     const container = document.querySelector('.container'); // 容器
+    const XMLHttpRequest = require('xmlhttprequest').XMLHttpRequest;
+    const xhr = new XMLHttpRequest();
+
 
     const correctPassword = '70727'; // 设置正确的密码
 
