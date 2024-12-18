@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const messagesDiv = document.getElementById('messages');
     const passwordInput = document.getElementById('passwordInput'); // 密码输入框
     const container = document.querySelector('.container'); // 容器
-
+    //workers test
     const correctPassword = '70727'; // 设置正确的密码
 
     // 点击按钮时显示密码输入框
