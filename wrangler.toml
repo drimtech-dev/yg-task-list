@@ -2,5 +2,3 @@ name = "messages-api"
 main = "src/app.js"
 node_compat = true
 compatibility_date = "2024-12-17"
-compatibility_flags = ["nodejs_compat"]
-
