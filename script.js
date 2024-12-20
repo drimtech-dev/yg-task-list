@@ -5,19 +5,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const messagesDiv = document.getElementById('messages');
     const passwordInput = document.getElementById('passwordInput'); // 密码输入框
     const container = document.querySelector('.container'); // 容器
-    const fetch = require('node-fetch');
-    //workers.test
+
     const correctPassword = '70727'; // 设置正确的密码
-    if (typeof process !== 'undefined' && process.env.NODE_ENV === 'development') {
-        // 开发环境使用 XMLHttpRequest
-        const { XMLHttpRequest } = require('xmlhttprequest');
-        global.XMLHttpRequest = XMLHttpRequest;
-      } else {
-        // 生产环境使用 fetch
-        const makeRequest = async (url, options) => {
-          return fetch(url, options);
-        }
-      }
 
     // 点击按钮时显示密码输入框
     showPasswordButton.addEventListener('click', function () {
