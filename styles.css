@@ -7,7 +7,7 @@
 @keyframes fadeIn {
     0% {
         opacity: 0; /* 初始透明度为0 */
-        transform: translateY(20px); /* 向下移动20px */
+        transform: translateY(22px); /* 向下移动20px */
     }
     100% {
         opacity: 1; /* 最终透明度为1 */
