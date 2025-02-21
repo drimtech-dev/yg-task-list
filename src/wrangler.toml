@@ -1,7 +1,0 @@
-name = "messages-api"
-main = "app.js"
-node_compat = true
-compatibility_date = "2024-11-11"
-workers_dev = true
-account_id = "2bd2e037a56bddc2449360092b62cc21"
-zone_id = "22fc705c7ea57686226166a935e2e88c"
